@@ -13,6 +13,8 @@ export default function Pokedex(props) {
   const { state, setPokemon } = useApplicationData();
   const { randomPokemonsList, selectedPokemon } = state;
 
+  const dynamicBorderByType = selectedPokemon.id ? selectedPokemon.types[0].type.name : '';
+
 
   return (
     <div className="pokedex-container">
@@ -36,7 +38,7 @@ export default function Pokedex(props) {
               </div>
             </div>
           </div>
-          <div className="pokedex-left-bottom">
+          <div className={`pokedex-left-bottom  ${dynamicBorderByType}`}>
             <div className="pokedex-left-display">
               { selectedPokemon.id && <PokemonDisplay selectedPokemon={selectedPokemon} /> } 
             </div>
