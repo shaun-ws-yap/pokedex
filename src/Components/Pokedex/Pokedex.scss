@@ -1,0 +1,111 @@
+.pokedex-container {
+  width: 100%;
+  height: 100%;
+  border: 1px solid black;
+}
+
+.pokedex {
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  width: 75%;
+  height: 85%;
+  border: 1px solid black;
+}
+
+.pokedex-left {
+  width: 50%;
+  border: 1px solid red;
+}
+
+.pokedex-right {
+  width: 50%;
+  border: 1px solid green;
+}
+
+.pokedex-left-top {
+  display: flex;
+  
+}
+
+.pokedex-sensor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  margin-left: 0.5em;
+  margin-top: 0.5em;
+  border: 3px solid black;
+  border-radius: 50%;
+}
+
+.pokedex-sensor-inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border: 3px solid black;
+  border-radius: 50%;
+  background-color: rgba(64, 175, 255, 1);
+}
+
+.pokedex-sensor-bubble {
+  position: relative;
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  bottom: 7px;
+  right: 7px;
+  background-color: white;
+}
+
+.pokedex-lights {
+  display: flex;
+  align-self: start;
+  width: 75px;
+  margin-top: 1em;
+  margin-left: 1em;
+  justify-content: space-around;
+}
+
+.red {
+  background-color: rgba(255, 64, 64, 1);
+}
+
+.yellow {
+  background-color: rgba(220, 227, 102, 1);
+}
+
+.green {
+  background-color: rgba(92, 209, 75, 1);
+}
+
+.red-bubble {
+  background-color: rgba(255, 181, 181, 1);
+}
+
+.yellow-bubble {
+  background-color: rgba(251, 255, 173, 1);
+}
+
+.green-bubble {
+  background-color: rgba(162, 240, 151, 1);
+}
+
+.pokedex-lights-bulb {
+  border: 3px solid black;
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+}
+
+.pokedex-lights-bubble {
+  position: relative;
+  height: 5px;
+  width: 5px;
+  border-radius: 50%;
+  top: 2px;
+  left: 2px;
+}
