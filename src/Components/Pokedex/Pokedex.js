@@ -80,25 +80,26 @@ export default function Pokedex(props) {
         <div className="pokedex-right">
           <div className="pokedex-right-top">
             <div className="search-container">
+              <label>Search:</label>
               <form
                 onSubmit={event => handleSearch(event)}
                 className="pokedex-search-input"
               >
-                <label>Search:</label>
                 <input 
-                  className={`pokedex-searchbar predict-${searchInput ? true : false}`}
+                  className={`pokedex-searchbar predict-${searchInput && searchPredictionsList.length > 0 ? true : false}`}
                   autoComplete="off" 
                   spellCheck="false"
                   value={searchInput}
                   onChange={event => setSearchInput(event.target.value)}
                 >
                 </input>
-              </form>
-              { searchInput && (
+                { searchInput && searchPredictionsList.length > 0 && (
                 <div className="search-predict">
                   { searchPredictionsList }
                 </div>
               )}
+              </form>
+             
       
             </div>
           </div>
