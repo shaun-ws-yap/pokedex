@@ -54,3 +54,45 @@
   left: 0;
   bottom: 0%;
 }
+
+.abilities-list {
+  margin-bottom: 0;
+}
+
+.selected-pokemon-stats > p {
+  margin-bottom: 0;
+}
+
+.pokemon-info {
+  padding-left: 2em;
+}
+
+.ability-item {
+  height: 2em;
+}
+
+.stats-list {
+  margin-top: 0;
+}
+
+.stats-item {
+  padding-left: 0;
+  height: 2.75em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  text-align: justify;
+}
+
+.type-item {
+  height: 2em;
+}
+
+.pokemon-info-height-weight {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+}
