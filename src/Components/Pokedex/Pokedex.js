@@ -1,11 +1,14 @@
 import React from 'react';
 
+import RandomPokemon from '../RandomPokemon/RandomPokemon';
+
 import './Pokedex.scss';
 
 import useApplicationData from '../../hooks/useApplicationData';
 
 export default function Pokedex(props) {
   const { state } = useApplicationData();
+  const { randomPokemons } = state;
 
 
   return (
@@ -53,7 +56,9 @@ export default function Pokedex(props) {
             <div className="pokedex-info-screen"></div>
             <div className="pokedex-random-pokemon">
               <h1 className="random-pokemon-header">Pokemon of the Day: </h1>
-              <div className="random-pokemon-container"></div>
+              <div className="random-pokemon-container">
+                <RandomPokemon randomPokemonsList={randomPokemons} />
+              </div>
             </div>
           </div>
         </div>
