@@ -1,0 +1,25 @@
+.random-pokemon-item > img {
+  width: 75%;
+  height: 75%;
+  max-width: 96px;
+  max-height: 96px;
+}
+
+.random-pokemon-item > h3 {
+  font-size: 0.5em;
+  text-transform: capitalize;
+}
+
+.random-pokemon-item {
+  width: 30%;
+  height: 100%;
+  margin: auto;
+}
+
+.random-pokemon-item:hover {
+  cursor: pointer;
+  img {
+    transition-duration: 0.25s;
+    transform: scale(1.25);
+  }
+}
