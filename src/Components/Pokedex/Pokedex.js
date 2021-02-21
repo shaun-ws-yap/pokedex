@@ -44,6 +44,9 @@ export default function Pokedex(props) {
               <input className="pokedex-searchbar"></input>
             </div>
           </div>
+          <div className="pokedex-right-bottom">
+            <div className="pokedex-info-screen"></div>
+          </div>
         </div>
       </div>
     </div>
