@@ -47,7 +47,7 @@ export default function Pokedex(props) {
         <div className="pokedex-left">
           <div className="pokedex-left-top">
             <div className="pokedex-sensor">
-              <div className="pokedex-sensor-inner">
+              <div className="pokedex-sensor-inner sensor-animate-true">
                 <div className="pokedex-sensor-bubble"></div>
               </div>
             </div>

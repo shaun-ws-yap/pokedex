@@ -402,3 +402,29 @@
   background-color: black;
   color: white;
 }
+
+.sensor-animate-true {
+  -webkit-animation-name: sensor-flash;
+  -webkit-animation-duration: 0.5s;
+
+  animation-name: sensor-flash;
+  animation-duration: 0.5s;
+}
+
+@-webkit-keyframes sensor-flash {  
+  0% { background: rgba(64, 175, 255, 0.2); } 
+  25% { background: rgba(64, 175, 255, 1 ); }
+  50% { background: rgba(64, 175, 255, 0.2 ); }
+  75% { background: rgba(64, 175, 255, 1); }
+  85% { background: rgba(64, 175, 255, 0.6); }
+  100% { background: rgba(64, 175, 255, 1); }
+}
+
+@keyframes sensor-flash {  
+  0% { background: rgba(64, 175, 255, 0.2); } 
+  25% { background: rgba(64, 175, 255, 1 ); }
+  50% { background: rgba(64, 175, 255, 0.2 ); }
+  75% { background: rgba(64, 175, 255, 1); }
+  85% { background: rgba(64, 175, 255, 0.6); }
+  100% { background: rgba(64, 175, 255, 1); }
+}
