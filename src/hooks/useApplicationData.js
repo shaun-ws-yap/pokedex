@@ -7,11 +7,10 @@ export default function useApplicationData(props) {
 
   const [state, setState] = useState({
     randomPokemonsList: [],
-    allPokemon: [],
     selectedPokemon: {},
   }) 
 
-  const setPokemon = pokemon => setState({...state, setPokemon});
+  const setPokemon = pokemon => setState({...state, selectedPokemon: pokemon});
 
   // Upon load, get the maximum index of Pokemon to generate random data
   useEffect(() => {
@@ -29,5 +28,5 @@ export default function useApplicationData(props) {
     })
   }, [])
 
-  return { state };
+  return { state, setPokemon };
 }

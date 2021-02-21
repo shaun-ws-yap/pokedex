@@ -201,11 +201,13 @@
 }
 
 .pokedex-info-screen {
+  display: flex;
   margin: auto;
   width: 85%;
   height: 65%;
   border: 2px solid black;
   background-color: rgba(119, 181, 146, 1);
+  font-size: 1em;
 }
 
 .pokedex-random-pokemon {

@@ -1,6 +1,8 @@
 import React from 'react';
 
 import RandomPokemon from '../RandomPokemon/RandomPokemon';
+import PokemonDisplay from '../Pokemon/PokemonDisplay';
+import PokemonInfo from '../Pokemon/PokemonInfo';
 
 import './Pokedex.scss';
 
@@ -35,7 +37,7 @@ export default function Pokedex(props) {
           </div>
           <div className="pokedex-left-bottom">
             <div className="pokedex-left-display">
-              
+              { selectedPokemon.id && <PokemonDisplay selectedPokemon={selectedPokemon} /> } 
             </div>
           </div>
           <div className="pokedex-left-buttons">
@@ -53,7 +55,9 @@ export default function Pokedex(props) {
             </div>
           </div>
           <div className="pokedex-right-bottom">
-            <div className="pokedex-info-screen"></div>
+            <div className="pokedex-info-screen">
+              { selectedPokemon.id && <PokemonInfo selectedPokemon={selectedPokemon} /> }
+            </div>
             <div className="pokedex-random-pokemon">
               <h1 className="random-pokemon-header">Pokemon of the Day: </h1>
               <div className="random-pokemon-container">
