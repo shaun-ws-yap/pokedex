@@ -10,6 +10,21 @@
   overflow: auto;
 }
 
+.selected-pokemon-info::-webkit-scrollbar {
+  width: 0.5em;
+  border-radius: 10px;
+}
+
+.selected-pokemon-info::-webkit-scrollbar-track {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+
+.selected-pokemon-info::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.65);
+}
+
 .image-button {
   background: none;
   border: none;

@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import './Pokemon.scss';
 
 export default function PokemonInfo(props) {
   const { selectedPokemon } = props;
+
+  useEffect(() => {
+    // body.scrollTo(0, 0);
+  }, [selectedPokemon]);
 
   const typeFormat = selectedPokemon.types.map((type, index) => {
     return (
