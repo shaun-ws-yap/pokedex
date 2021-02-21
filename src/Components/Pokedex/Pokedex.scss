@@ -202,6 +202,8 @@
 
 .pokedex-info-screen {
   display: flex;
+  flex-direction: column;
+  text-align: left;
   margin: auto;
   width: 85%;
   height: 65%;
