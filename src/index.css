@@ -1,6 +1,10 @@
 body {
   margin: 0;
+  margin-top: 15vh;
   font-family: 'Press Start 2P', cursive;
+  background-image: url('./docs/background.png');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 code {

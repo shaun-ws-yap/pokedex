@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 import RandomPokemon from '../RandomPokemon/RandomPokemon';
 import PokemonDisplay from '../Pokemon/PokemonDisplay';
@@ -10,11 +10,18 @@ import './Pokedex.scss';
 import useApplicationData from '../../hooks/useApplicationData';
 
 export default function Pokedex(props) {
-  const { state, setPokemon } = useApplicationData();
+  const { state, setPokemon, getSearchedPokemon } = useApplicationData();
   const { randomPokemonsList, selectedPokemon } = state;
+  const [ searchInput, setSearchInput ] = useState("");
 
+  // Dynamically change border of pokedex display based on selected pokemon type 
   const dynamicBorderByType = selectedPokemon.id ? selectedPokemon.types[0].type.name : '';
 
+  const handleSearch = (event) => {
+    event.preventDefault();
+    getSearchedPokemon(searchInput);
+    setSearchInput("");
+  }
 
   return (
     <div className="pokedex-container">
@@ -59,8 +66,19 @@ export default function Pokedex(props) {
         <div className="pokedex-right">
           <div className="pokedex-right-top">
             <div className="search-container">
-              <label>Search: </label>
-              <input className="pokedex-searchbar" autoComplete="off" spellCheck="false"></input>
+              <form
+                onSubmit={event => handleSearch(event)}
+              >
+                <label>Search: </label>
+                <input 
+                  className="pokedex-searchbar" 
+                  autoComplete="off" 
+                  spellCheck="false"
+                  value={searchInput}
+                  onChange={event => setSearchInput(event.target.value)}
+                >
+                </input>
+              </form>
             </div>
           </div>
           <div className="pokedex-right-bottom">

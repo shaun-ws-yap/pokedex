@@ -6,12 +6,15 @@ export default function PokemonDisplay(props) {
   const { selectedPokemon } = props;
   const [ imageIndex, setImageIndex ] = useState(-1);
 
+  // Reduces API sprites result to a usable array, removing null and undefined KVPs
   const usableSpritesArray = Object.values(selectedPokemon.sprites).filter(sprite => sprite && typeof sprite != 'object');
 
+  // Reset image display pagination index to 0 upon selection change
   useEffect(() => {
     setImageIndex(-1);
   }, [selectedPokemon])
 
+  // Increments image index to show next image
   const handleNext = () => {
     if (imageIndex < usableSpritesArray.length) {
       let currentIndex = imageIndex;
@@ -19,6 +22,7 @@ export default function PokemonDisplay(props) {
     }
   }
 
+  // Decrements image index to go back by 1
   const handlePrev = () => {
     let currentIndex = imageIndex;
     setImageIndex(currentIndex-1);

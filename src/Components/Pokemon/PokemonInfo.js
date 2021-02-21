@@ -29,8 +29,8 @@ export default function PokemonInfo(props) {
 
   return (
     <div className="selected-pokemon-info">
-      {/* could be multiple types here */}
       <div className="selected-pokemon-type">
+        {/* Plurality type check */}
         <p>{ selectedPokemon.types.length > 1 ? 'Types: '  : `Type: ${selectedPokemon.types[0].type.name}` }</p>
         { selectedPokemon.types.length > 1 ? <ul>{typeFormat}</ul>  : "" }
       </div>

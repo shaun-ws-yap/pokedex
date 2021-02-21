@@ -10,6 +10,10 @@
   overflow: auto;
 }
 
+.pokemon-name {
+  width: 100%;
+}
+
 .selected-pokemon-info::-webkit-scrollbar {
   width: 0.5em;
   border-radius: 10px;
