@@ -45,7 +45,6 @@ export default function useApplicationData(props) {
   const setFromSearch = (pokemon) => {
     axios.get(GET_POKEMON_INFO + pokemon.name)
     .then(res => {
-      console.log(res.data);
       setPokemon(res.data);
     });
   }
