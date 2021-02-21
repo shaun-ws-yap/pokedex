@@ -46,7 +46,11 @@ export default function Pokedex(props) {
             <div className="pokedex-buttons-screen">
             { selectedPokemon.id && <PokemonName selectedPokemon={selectedPokemon} /> } 
             </div>
-            <div className="pokedex-buttons-right"></div>
+            <div class="pokedex-buttons-right">
+              <div class="pokedex-buttons-center-circle"></div>
+              <div class="pokedex-buttons-vertical"></div>
+              <div class="pokedex-buttons-horizontal"></div>
+            </div>
           </div>
         </div>
         <div className="pokedex-middle"></div>
