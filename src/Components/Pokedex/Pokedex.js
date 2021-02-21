@@ -60,7 +60,7 @@ export default function Pokedex(props) {
           <div className="pokedex-right-top">
             <div className="search-container">
               <label>Search: </label>
-              <input className="pokedex-searchbar"></input>
+              <input className="pokedex-searchbar" autoComplete="off" spellCheck="false"></input>
             </div>
           </div>
           <div className="pokedex-right-bottom">
