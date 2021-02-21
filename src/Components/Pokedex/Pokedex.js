@@ -10,7 +10,7 @@ import './Pokedex.scss';
 import useApplicationData from '../../hooks/useApplicationData';
 
 export default function Pokedex(props) {
-  const { state, setPokemon, getSearchedPokemon, searchAutocomplete } = useApplicationData();
+  const { state, setPokemon, getSearchedPokemon, searchAutocomplete, setFromSearch } = useApplicationData();
   const { randomPokemonsList, selectedPokemon } = state;
   const [ searchInput, setSearchInput ] = useState("");
   const [ searchPredictions, setSearchPredictions ] = useState({});
@@ -24,6 +24,11 @@ export default function Pokedex(props) {
     setSearchInput("");
   }
 
+  const handleSetPokemonFromSearch = (pokemon) => {
+    setFromSearch(pokemon);
+    setSearchInput("");
+  }
+
   useEffect(() => {
     setSearchPredictions(searchAutocomplete(searchInput));
   }, [searchInput])
@@ -31,11 +36,10 @@ export default function Pokedex(props) {
   if (searchInput) {
     var searchPredictionsList = searchPredictions.map(search => {
       return (
-        <p key={search.name}>{search.name}</p>
+        <p key={search.name} className="search-prediction-results" onClick={event => handleSetPokemonFromSearch(search)}>{search.name}</p>
       )
     }) 
   }
-  // console.log(searchPredictionsList);
   
   return (
     <div className="pokedex-container">

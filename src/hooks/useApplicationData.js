@@ -42,6 +42,13 @@ export default function useApplicationData(props) {
     return state.allPokemons.filter(pokemon => pokemon.name.split('-')[0].toLowerCase().includes(searchInput.toLowerCase()));
   }
 
+  const setFromSearch = (pokemon) => {
+    axios.get(GET_POKEMON_INFO + pokemon.name)
+    .then(res => {
+      console.log(res.data);
+      setPokemon(res.data);
+    });
+  }
 
   // Returns and saves search results to state
   const getSearchedPokemon = (pokemon) => {
@@ -53,5 +60,5 @@ export default function useApplicationData(props) {
   }
 
 
-  return { state, setPokemon, getSearchedPokemon, searchAutocomplete };
+  return { state, setPokemon, getSearchedPokemon, searchAutocomplete, setFromSearch };
 }
