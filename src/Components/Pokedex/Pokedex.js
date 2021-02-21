@@ -7,8 +7,8 @@ import './Pokedex.scss';
 import useApplicationData from '../../hooks/useApplicationData';
 
 export default function Pokedex(props) {
-  const { state } = useApplicationData();
-  const { randomPokemons } = state;
+  const { state, setPokemon } = useApplicationData();
+  const { randomPokemonsList, selectedPokemon } = state;
 
 
   return (
@@ -35,7 +35,7 @@ export default function Pokedex(props) {
           </div>
           <div className="pokedex-left-bottom">
             <div className="pokedex-left-display">
-
+              
             </div>
           </div>
           <div className="pokedex-left-buttons">
@@ -57,7 +57,7 @@ export default function Pokedex(props) {
             <div className="pokedex-random-pokemon">
               <h1 className="random-pokemon-header">Pokemon of the Day: </h1>
               <div className="random-pokemon-container">
-                <RandomPokemon randomPokemonsList={randomPokemons} />
+                <RandomPokemon randomPokemonsList={randomPokemonsList} setPokemon={setPokemon} />
               </div>
             </div>
           </div>

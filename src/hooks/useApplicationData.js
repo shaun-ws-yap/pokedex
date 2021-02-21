@@ -6,7 +6,7 @@ export default function useApplicationData(props) {
   const GET_RANDOM_POKEMONS = `https://pokeapi.co/api/v2/pokemon/`;
 
   const [state, setState] = useState({
-    randomPokemons: [],
+    randomPokemonsList: [],
     allPokemon: [],
     selectedPokemon: {},
   }) 
@@ -17,16 +17,17 @@ export default function useApplicationData(props) {
   useEffect(() => {
     axios.get(GET_MAX_POKEMON_INDEX)
     .then(res => {
+      // Randomly generates 3 pokemon data
       let randomPokemons = [];
       for (let i = 0; i < 3; i++) {
         const randomIndex = Math.round(Math.random() * Math.floor(res.data.count));
         axios.get(GET_RANDOM_POKEMONS + randomIndex)
-        .then(res => randomPokemons.push(res.data))
+        .then(res => {
+          setState(prev => ({...prev, randomPokemonsList: [...prev.randomPokemonsList, res.data]}));
+        })
       }
-      setState(prev => ({...prev, randomPokemons: randomPokemons}));
     })
   }, [])
 
   return { state };
-
 }
