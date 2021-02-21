@@ -124,6 +124,7 @@
 }
 
 .pokedex-left-display {
+  position: relative;
   margin: auto;
   height: 90%;
   width: 90%;
@@ -161,21 +162,6 @@
 .pokedex-buttons-screen > h3 {
   text-transform: capitalize;
 }
-
-// .left-button {
-//   position: relative;
-//   top: 30%;
-//   width: 35px;
-//   height: 30px;
-// }
-
-// .right-button {
-//   position: relative;
-//   top: 30%;
-//   left: 30%;
-//   width: 35px;
-//   height: 30px;
-// }
 
 .pokedex-buttons-right {
   height: 64px;

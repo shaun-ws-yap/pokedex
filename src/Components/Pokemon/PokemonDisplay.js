@@ -29,8 +29,8 @@ export default function PokemonDisplay(props) {
       { imageIndex === -1 && <img className="pokemon-display-image" src={selectedPokemon.sprites.front_default}></img> }
       { imageIndex !== - 1 && <img className="pokemon-display-image" src={usableSpritesArray[imageIndex]}></img> }
       <h4>ID: {selectedPokemon.id}</h4>
-      { imageIndex > -1 && <button onClick={event => handlePrev()}>back</button> }
-      { imageIndex < usableSpritesArray.length - 1 && <button onClick={event => handleNext()}>next</button> }
+      { imageIndex > -1 && <button className="image-button previous" onClick={event => handlePrev()}><i class="fas fa-caret-left fa-2x"></i></button> }
+      { imageIndex < usableSpritesArray.length - 1 && <button className="image-button next" onClick={event => handleNext()}><i class="fas fa-caret-right fa-2x"></i></button> }
     </>
   )
 }

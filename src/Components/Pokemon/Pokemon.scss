@@ -9,3 +9,27 @@
   text-align: left;
   overflow: auto;
 }
+
+.image-button {
+  background: none;
+  border: none;
+  outline: none;
+  width: 2.5em;
+  height: 2.5em;
+  
+  :hover {
+    cursor: pointer;
+  }
+}
+
+.next {
+  position: absolute;
+  right: 0;
+  bottom: 0%;
+}
+
+.previous {
+  position: absolute;
+  left: 0;
+  bottom: 0%;
+}
