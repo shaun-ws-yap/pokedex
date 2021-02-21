@@ -16,10 +16,12 @@
   outline: none;
   width: 2.5em;
   height: 2.5em;
-  
-  :hover {
-    cursor: pointer;
-  }
+  opacity: 0.6;
+}
+
+.image-button:hover {
+  cursor: pointer;
+  opacity: 1;
 }
 
 .next {
