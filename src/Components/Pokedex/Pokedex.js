@@ -3,6 +3,7 @@ import React from 'react';
 import RandomPokemon from '../RandomPokemon/RandomPokemon';
 import PokemonDisplay from '../Pokemon/PokemonDisplay';
 import PokemonInfo from '../Pokemon/PokemonInfo';
+import PokemonName from '../Pokemon/PokemonName';
 
 import './Pokedex.scss';
 
@@ -42,7 +43,9 @@ export default function Pokedex(props) {
           </div>
           <div className="pokedex-left-buttons">
             <div className="pokedex-buttons-left"></div>
-            <div className="pokedex-buttons-screen"></div>
+            <div className="pokedex-buttons-screen">
+            { selectedPokemon.id && <PokemonName selectedPokemon={selectedPokemon} /> } 
+            </div>
             <div className="pokedex-buttons-right"></div>
           </div>
         </div>
