@@ -36,7 +36,7 @@ export default function Pokedex(props) {
             <div className="pokedex-buttons-right"></div>
           </div>
         </div>
-
+        <div className="pokedex-middle"></div>
         <div className="pokedex-right">
           <div className="pokedex-right-top">
             <div className="search-container">
@@ -46,6 +46,10 @@ export default function Pokedex(props) {
           </div>
           <div className="pokedex-right-bottom">
             <div className="pokedex-info-screen"></div>
+            <div className="pokedex-random-pokemon">
+              <h1 className="random-pokemon-header">Pokemon of the Day: </h1>
+              <div className="random-pokemon-container"></div>
+            </div>
           </div>
         </div>
       </div>

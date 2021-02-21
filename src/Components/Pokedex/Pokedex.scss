@@ -1,7 +1,6 @@
 .pokedex-container {
   width: 100%;
   height: 100%;
-  border: 1px solid black;
 }
 
 .pokedex {
@@ -10,18 +9,18 @@
   margin: auto;
   width: 75%;
   height: 100%;
-  border: 1px solid black;
+  border: 4px solid black;
 }
 
 .pokedex-left {
   width: 50%;
   height: 100%;
-  border: 1px solid red;
+  background-color: rgba(255, 33, 33, 1);
 }
 
 .pokedex-right {
   width: 50%;
-  border: 1px solid green;
+  background-color: rgba(255, 33, 33, 1);
 }
 
 .pokedex-left-top {
@@ -38,6 +37,7 @@
   margin-top: 0.5em;
   border: 3px solid black;
   border-radius: 50%;
+  background-color: white;
 }
 
 .pokedex-sensor-inner {
@@ -113,20 +113,22 @@
 .pokedex-left-bottom {
   display: flex;
   flex-direction: column;
-  border: 1px solid black;
+  border: 2px solid black;
   border-radius: 2%;
   margin: auto;
   margin-top: 1em;
   height: 55%;
   width: 70%;
   display: flex;
+  background-color: rgb(190, 190, 190);
 }
 
 .pokedex-left-display {
   margin: auto;
   height: 90%;
   width: 90%;
-  border: 1px solid green;
+  border: 2px solid black;
+  background-color: rgba(119, 181, 146, 1);
 }
 
 .pokedex-left-buttons {
@@ -151,13 +153,22 @@
 .pokedex-buttons-screen {
   width: 55%;;
   height: 60%;
-  border: 1px solid black;
+  border: 2px solid black;
+  background-color: rgba(119, 181, 146, 1);
+  border-radius: 3px;
 }
 
 .pokedex-buttons-right {
   width: 30%;
   height: 100%;
   border: 1px solid black;
+}
+
+.pokedex-middle {
+  height: 100%;
+  width: 2%;
+  border: 1px solid black;
+  background-color: darkred;
 }
 
 .pokedex-right-top {
@@ -184,8 +195,35 @@
 }
 
 .pokedex-right-bottom {
-  border: 1px solid black;
   margin: auto;
-  width: 75%;
-  height: 50%;
+  width: 90%;
+  height: 80%;
+}
+
+.pokedex-info-screen {
+  margin: auto;
+  width: 85%;
+  height: 65%;
+  border: 2px solid black;
+  background-color: rgba(119, 181, 146, 1);
+}
+
+.pokedex-random-pokemon {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  margin-top: 1em;
+  width: 85%;
+  height: 30%;
+  border: 1px solid black;
+}
+
+.random-pokemon-header {
+  font-size: 0.75em;
+}
+
+.random-pokemon-container {
+  border: 1px solid black;
+  width: 100%;
+  height: 100%;
 }
