@@ -12,9 +12,12 @@ import useApplicationData from '../../hooks/useApplicationData';
 export default function Pokedex(props) {
   const { state, setPokemon, getSearchedPokemon, searchAutocomplete, setFromSearch } = useApplicationData();
   const { randomPokemonsList, selectedPokemon } = state;
+
+  // States Management
   const [ searchInput, setSearchInput ] = useState("");
   const [ searchPredictions, setSearchPredictions ] = useState({});
   const [ animate, setAnimate ] = useState(false);
+  const [ error, setError ] = useState("");
 
   // Dynamically change border of pokedex display based on selected pokemon type 
   const dynamicBorderByType = selectedPokemon.id ? selectedPokemon.types[0].type.name : '';
@@ -30,6 +33,7 @@ export default function Pokedex(props) {
     setSearchInput("");
   }
 
+  // Set sensor animation to true and reset to false after 0.5s
   useEffect(() => {
     setAnimate(true);
     setTimeout(() => {
@@ -37,6 +41,8 @@ export default function Pokedex(props) {
     }, 500)
   }, [selectedPokemon])
 
+
+  // Auto fills predictions as user types
   useEffect(() => {
     setSearchPredictions(searchAutocomplete(searchInput));
   }, [searchInput])
