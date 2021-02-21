@@ -2,7 +2,12 @@ import React from 'react';
 
 import './Pokedex.scss';
 
+import useApplicationData from '../../hooks/useApplicationData';
+
 export default function Pokedex(props) {
+  const { state } = useApplicationData();
+
+
   return (
     <div className="pokedex-container">
       <div className="pokedex">
