@@ -6,8 +6,6 @@ export default function RandomPokemon(props) {
   const { randomPokemonsList, setPokemon } = props;
 
   const renderRandomPokemonsList = randomPokemonsList.map(pokemon => {
-    const splitName = pokemon.name.split('-');
-
     return (
       <div 
         className="random-pokemon-item" 
@@ -15,7 +13,7 @@ export default function RandomPokemon(props) {
         onClick={event => setPokemon(pokemon)}
       >
         <img src={pokemon.sprites.front_default}></img>
-        <h3>{splitName[0]}</h3>
+        <h3>{pokemon.name}</h3>
       </div>
     )
   })

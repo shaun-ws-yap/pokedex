@@ -5,7 +5,7 @@ export default function useApplicationData(props) {
   const GET_MAX_POKEMON_INDEX = `https://pokeapi.co/api/v2/pokemon-species/?limit=0`;
   const GET_RANDOM_POKEMONS = `https://pokeapi.co/api/v2/pokemon/`;
   const GET_POKEMON_INFO = `https://pokeapi.co/api/v2/pokemon/`;
-  const GET_ALL_POKEMON = `https://pokeapi.co/api/v2/pokemon/?limit=-1`;
+  const GET_ALL_POKEMON = `https://pokeapi.co/api/v2/pokemon-species/?limit=-1`;
 
   const [state, setState] = useState({
     randomPokemonsList: [],
@@ -39,7 +39,7 @@ export default function useApplicationData(props) {
   }, [])
 
   const searchAutocomplete = (searchInput) => {
-    return state.allPokemons.filter(pokemon => pokemon.name.split('-')[0].toLowerCase().includes(searchInput.toLowerCase()));
+    return state.allPokemons.filter(pokemon => pokemon.name.toLowerCase().includes(searchInput.toLowerCase()));
   }
 
   const setFromSearch = (pokemon) => {
