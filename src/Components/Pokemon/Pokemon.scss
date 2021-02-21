@@ -8,6 +8,7 @@
   margin-right: 0;
   text-align: left;
   overflow: auto;
+  padding-right: 0.5em;
 }
 
 .pokemon-name {
@@ -89,10 +90,13 @@
   height: 2em;
 }
 
-.pokemon-info-height-weight {
+.pokemon-info-height-weight-type {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+}
 
+.pokemon-info-types {
+  margin-top: 1em;
 }

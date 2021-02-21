@@ -34,8 +34,18 @@ export default function PokemonInfo(props) {
     <div className="selected-pokemon-info">
       <div className="selected-pokemon-type">
         {/* Plurality type check */}
-        <p>{ selectedPokemon.types.length > 1 ? 'Types: '  : `Type: ${selectedPokemon.types[0].type.name}` }</p>
-        { selectedPokemon.types.length > 1 ? <ul className="pokemon-info types-list">{typeFormat}</ul>  : "" }
+        { selectedPokemon.types.length === 1 && (
+          <div className="pokemon-info-height-weight-type">
+            <label>Type: </label>
+            <p>{selectedPokemon.types[0].type.name}</p>
+          </div>
+        )} 
+        { selectedPokemon.types.length > 1 && (
+          <div className="pokemon-info-types">
+            <label>Types: </label>
+            <ul className="pokemon-info types-list">{typeFormat}</ul>
+          </div>
+        )}
       </div>
       <div className="selected-pokemon-ability">
         <p>Abilities:</p>
@@ -43,11 +53,11 @@ export default function PokemonInfo(props) {
           {abilityFormat}
         </ul>
       </div>
-      <div className="pokemon-info-height-weight">
+      <div className="pokemon-info-height-weight-type">
         <label>Height: </label>
         <p>{selectedPokemon.height}</p>
       </div>
-      <div className="pokemon-info-height-weight">
+      <div className="pokemon-info-height-weight-type">
         <label>Weight: </label>
         <p>{selectedPokemon.weight}</p>
       </div>    
