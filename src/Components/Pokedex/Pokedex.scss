@@ -158,6 +158,10 @@
   border-radius: 3px;
 }
 
+.pokedex-buttons-screen > h3 {
+  text-transform: capitalize;
+}
+
 .pokedex-buttons-right {
   width: 30%;
   height: 100%;
@@ -211,6 +215,7 @@
   width: 85%;
   height: 65%;
   border: 2px solid black;
+  border-radius: 5px;
   background-color: rgba(119, 181, 146, 1);
   font-size: 1em;
 }
