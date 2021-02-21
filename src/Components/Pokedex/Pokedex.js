@@ -25,6 +25,16 @@ export default function Pokedex(props) {
               </div>
             </div>
           </div>
+          <div className="pokedex-left-bottom">
+            <div className="pokedex-left-display">
+
+            </div>
+          </div>
+          <div className="pokedex-left-buttons">
+            <div className="pokedex-buttons-left"></div>
+            <div className="pokedex-buttons-screen"></div>
+            <div className="pokedex-buttons-right"></div>
+          </div>
         </div>
 
         <div className="pokedex-right">
