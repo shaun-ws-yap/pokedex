@@ -26,7 +26,6 @@
 
 .pokedex-left-top {
   display: flex;
-  
 }
 
 .pokedex-sensor {
@@ -159,4 +158,27 @@
   width: 30%;
   height: 100%;
   border: 1px solid black;
+}
+
+.pokedex-right-top {
+  display: flex;
+  margin: auto;
+  margin-top: 1em;
+  width: 75%;
+  height: 15%;
+}
+
+.search-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+
+.pokedex-searchbar {
+  margin-top: 0.5em;
+  width: 100%;
+  height: 50%;
+  border: 1px solid black;
+  font-size: 100%;
 }
