@@ -1,12 +1,16 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 
 import './Pokemon.scss';
 
 export default function PokemonInfo(props) {
   const { selectedPokemon } = props;
 
+  // Initialize ref to be used to scroll div to top
+  const divRef = useRef(null);
+
+  // Scroll to top of info display upon new pokemon selection
   useEffect(() => {
-    // body.scrollTo(0, 0);
+    divRef.current.scrollTo(0, 0);
   }, [selectedPokemon]);
 
   const typeFormat = selectedPokemon.types.map((type, index) => {
@@ -31,7 +35,7 @@ export default function PokemonInfo(props) {
   })
 
   return (
-    <div className="selected-pokemon-info">
+    <div className="selected-pokemon-info" ref={divRef}>
       <div className="selected-pokemon-type">
         {/* Plurality type check */}
         { selectedPokemon.types.length === 1 && (
