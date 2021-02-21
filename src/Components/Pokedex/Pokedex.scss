@@ -221,7 +221,6 @@
 .search-container {
   display: flex;
   flex-direction: column;
-  width: 100%;
   align-items: center;
 }
 
@@ -230,10 +229,15 @@
   outline: none;
   border-radius: 10px;
   margin-top: 0.5em;
-  width: 100%;
-  height: 70%;
+  // width: 100%;
+  height: 2em;
   font-size: 100%;
   border: none;
+}
+
+.predict-true {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
 }
 
 .pokedex-right-bottom {
@@ -346,4 +350,32 @@
 
 .poison {
   background-color: rgba(237, 77, 255, 1);
+}
+
+.pokedex-search-input {
+  // position: relative;
+  // width: 100%;
+}
+
+.search-predict {
+  // overflow: auto;
+  width: 100%;
+  height: 20vh;
+  background-color: white;
+  z-index: 999;
+}
+
+.search-predict::-webkit-scrollbar {
+  width: 0.5em;
+  border-radius: 10px;
+}
+
+.search-predict::-webkit-scrollbar-track {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+
+.search-predict::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.65);
 }

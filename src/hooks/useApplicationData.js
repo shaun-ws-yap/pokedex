@@ -11,26 +11,37 @@ export default function useApplicationData(props) {
     randomPokemonsList: [],
     selectedPokemon: {},
     searchedPokemon: {},
+    allPokemons: [],
   }) 
 
   const setPokemon = pokemon => setState({...state, selectedPokemon: pokemon});
 
   // Upon load, get the maximum index of Pokemon to generate random data
   useEffect(() => {
-    axios.get(GET_MAX_POKEMON_INDEX)
-    .then(res => {
-      // Randomly generates 3 pokemon data
-      let randomPokemons = [];
-      for (let i = 0; i < 3; i++) {
-        const randomIndex = Math.round(Math.random() * Math.floor(res.data.count));
-        axios.get(GET_RANDOM_POKEMONS + randomIndex)
-        .then(res => {
-          // Sets 3 randomly generated pokemon to state
-          setState(prev => ({...prev, randomPokemonsList: [...prev.randomPokemonsList, res.data]}));
-        })
-      }
+    Promise.all([
+      axios.get(GET_MAX_POKEMON_INDEX)
+      .then(res => {
+        // Randomly generates 3 pokemon data
+        let randomPokemons = [];
+        for (let i = 0; i < 3; i++) {
+          const randomIndex = Math.round(Math.random() * Math.floor(res.data.count));
+          axios.get(GET_RANDOM_POKEMONS + randomIndex)
+          .then(res => {
+            // Sets 3 randomly generated pokemon to state
+            setState(prev => ({...prev, randomPokemonsList: [...prev.randomPokemonsList, res.data]}));
+          })
+        }
+      }),
+      axios.get(GET_ALL_POKEMON)
+    ]).then(data => {
+      setState(prev => ({...prev, allPokemons: data[1].data.results}));
     })
   }, [])
+
+  const searchAutocomplete = (searchInput) => {
+    return state.allPokemons.filter(pokemon => pokemon.name.split('-')[0].toLowerCase().includes(searchInput.toLowerCase()));
+  }
+
 
   // Returns and saves search results to state
   const getSearchedPokemon = (pokemon) => {
@@ -42,5 +53,5 @@ export default function useApplicationData(props) {
   }
 
 
-  return { state, setPokemon, getSearchedPokemon };
+  return { state, setPokemon, getSearchedPokemon, searchAutocomplete };
 }

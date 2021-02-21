@@ -10,9 +10,10 @@ import './Pokedex.scss';
 import useApplicationData from '../../hooks/useApplicationData';
 
 export default function Pokedex(props) {
-  const { state, setPokemon, getSearchedPokemon } = useApplicationData();
+  const { state, setPokemon, getSearchedPokemon, searchAutocomplete } = useApplicationData();
   const { randomPokemonsList, selectedPokemon } = state;
   const [ searchInput, setSearchInput ] = useState("");
+  const [ searchPredictions, setSearchPredictions ] = useState({});
 
   // Dynamically change border of pokedex display based on selected pokemon type 
   const dynamicBorderByType = selectedPokemon.id ? selectedPokemon.types[0].type.name : '';
@@ -23,6 +24,19 @@ export default function Pokedex(props) {
     setSearchInput("");
   }
 
+  useEffect(() => {
+    setSearchPredictions(searchAutocomplete(searchInput));
+  }, [searchInput])
+
+  if (searchInput) {
+    var searchPredictionsList = searchPredictions.map(search => {
+      return (
+        <p key={search.name}>{search.name}</p>
+      )
+    }) 
+  }
+  // console.log(searchPredictionsList);
+  
   return (
     <div className="pokedex-container">
       <div className="pokedex">
@@ -68,10 +82,11 @@ export default function Pokedex(props) {
             <div className="search-container">
               <form
                 onSubmit={event => handleSearch(event)}
+                className="pokedex-search-input"
               >
-                <label>Search: </label>
+                <label>Search:</label>
                 <input 
-                  className="pokedex-searchbar" 
+                  className={`pokedex-searchbar predict-${searchInput ? true : false}`}
                   autoComplete="off" 
                   spellCheck="false"
                   value={searchInput}
@@ -79,6 +94,12 @@ export default function Pokedex(props) {
                 >
                 </input>
               </form>
+              { searchInput && (
+                <div className="search-predict">
+                  { searchPredictionsList }
+                </div>
+              )}
+      
             </div>
           </div>
           <div className="pokedex-right-bottom">
