@@ -37,5 +37,5 @@ You will also see any lint errors in the console.
 ![Random Pokemon](https://github.com/shaun-ws-yap/pokedex/blob/main/src/docs/screenshots/random-pokemon.png?raw=true)
 ![Search Feature](https://github.com/shaun-ws-yap/pokedex/blob/main/src/docs/screenshots/search.png?raw=true)
 ![Pokemon Stats](https://github.com/shaun-ws-yap/pokedex/blob/main/src/docs/screenshots/stats.png?raw=true)
-
+![Error Handling](https://github.com/shaun-ws-yap/pokedex/blob/main/src/docs/screenshots/error.png?raw=true)
 
