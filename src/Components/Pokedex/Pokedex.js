@@ -10,37 +10,45 @@ import './Pokedex.scss';
 import useApplicationData from '../../hooks/useApplicationData';
 
 export default function Pokedex(props) {
-  const { state, setPokemon, getSearchedPokemon, searchAutocomplete, setFromSearch } = useApplicationData();
-  const { randomPokemonsList, selectedPokemon } = state;
+  const { state, setPokemon, getSearchedPokemon, searchAutocomplete, setFromSearch, setState } = useApplicationData();
+  const { randomPokemonsList, selectedPokemon, error } = state;
 
   // States Management
   const [ searchInput, setSearchInput ] = useState("");
   const [ searchPredictions, setSearchPredictions ] = useState({});
   const [ animate, setAnimate ] = useState(false);
-  const [ error, setError ] = useState("");
+  const [ errorAnimate, setErrorAnimate ] = useState(false);
 
   // Dynamically change border of pokedex display based on selected pokemon type 
   const dynamicBorderByType = selectedPokemon.id ? selectedPokemon.types[0].type.name : '';
 
-  const handleSearch = (event) => {
+  const handleSearchSubmit = (event) => {
     event.preventDefault();
-    getSearchedPokemon(searchInput);
+    setState(prev => ({...prev, error: undefined}));
+    getSearchedPokemon(searchInput.toLowerCase());
     setSearchInput("");
   }
 
-  const handleSetPokemonFromSearch = (pokemon) => {
+  const handleSetPokemonFromSearchPredict = (event, pokemon) => {
+    event.preventDefault();
     setFromSearch(pokemon);
     setSearchInput("");
   }
 
   // Set sensor animation to true and reset to false after 0.5s
   useEffect(() => {
-    setAnimate(true);
-    setTimeout(() => {
-      setAnimate(false);
-    }, 500)
+    if (!error) {
+      setAnimate(true);
+      setTimeout(() => {
+        setAnimate(false);
+      }, 500)
+    } else {
+      setErrorAnimate(true);
+      setTimeout(() => {
+        setErrorAnimate(false);
+      }, 500)
+    }
   }, [selectedPokemon])
-
 
   // Auto fills predictions as user types
   useEffect(() => {
@@ -50,7 +58,7 @@ export default function Pokedex(props) {
   if (searchInput) {
     var searchPredictionsList = searchPredictions.map(search => {
       return (
-        <p key={search.name} className="search-prediction-results" onClick={event => handleSetPokemonFromSearch(search)}>{search.name}</p>
+        <p key={search.name} className="search-prediction-results" onClick={event => handleSetPokemonFromSearchPredict(event, search)}>{search.name}</p>
       )
     }) 
   }
@@ -61,7 +69,7 @@ export default function Pokedex(props) {
         <div className="pokedex-left">
           <div className="pokedex-left-top">
             <div className="pokedex-sensor">
-              <div className={`pokedex-sensor-inner animate-${animate}`}>
+              <div className={`pokedex-sensor-inner animate-${animate} error-${errorAnimate}`}>
                 <div className="pokedex-sensor-bubble"></div>
               </div>
             </div>
@@ -85,7 +93,8 @@ export default function Pokedex(props) {
           <div className="pokedex-left-buttons">
             <div className="pokedex-buttons-left"></div>
             <div className="pokedex-buttons-screen">
-            { selectedPokemon.id && <PokemonName selectedPokemon={selectedPokemon} /> } 
+              { error && <h4>{error}</h4> }
+              { selectedPokemon.id && <PokemonName selectedPokemon={selectedPokemon} /> } 
             </div>
             <div className="pokedex-buttons-right">
               <div className="pokedex-buttons-center-circle"></div>
@@ -100,7 +109,7 @@ export default function Pokedex(props) {
             <div className="search-container">
               <label>Search:</label>
               <form
-                onSubmit={event => handleSearch(event)}
+                onSubmit={event => handleSearchSubmit(event)}
                 className="pokedex-search-input"
               >
                 <input 

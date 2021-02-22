@@ -12,9 +12,12 @@ export default function useApplicationData(props) {
     selectedPokemon: {},
     searchedPokemon: {},
     allPokemons: [],
+    error: undefined,
   }) 
 
-  const setPokemon = pokemon => setState({...state, selectedPokemon: pokemon});
+  const setPokemon = (pokemon) => {
+    setState({...state, error: undefined, selectedPokemon: pokemon});
+  }
 
   // Upon load, get the maximum index of Pokemon to generate random data
   useEffect(() => {
@@ -24,19 +27,34 @@ export default function useApplicationData(props) {
         // Randomly generates 3 pokemon data
         let randomPokemons = [];
         for (let i = 0; i < 3; i++) {
-          const randomIndex = Math.round(Math.random() * Math.floor(res.data.count));
+          const randomIndex = Math.round(Math.random() * Math.floor(res.data.count)) - 1;
           axios.get(GET_RANDOM_POKEMONS + randomIndex)
           .then(res => {
             // Sets 3 randomly generated pokemon to state
             setState(prev => ({...prev, randomPokemonsList: [...prev.randomPokemonsList, res.data]}));
           })
+          .catch(err => {
+            console.log(err);
+            setState(prev => ({...prev, error: err.response.data}));
+          })
         }
       }),
       axios.get(GET_ALL_POKEMON)
-    ]).then(data => {
+    ])
+    .then(data => {
       setState(prev => ({...prev, allPokemons: data[1].data.results}));
     })
+    .catch(err => {
+      setState(prev => ({...prev, error: err.response.data}));
+    })
   }, [])
+
+  // Reset displays to empty if error found
+  useEffect(() => {
+    if (state.error) {
+      setState(prev => ({...prev, selectedPokemon: {}}))
+    }
+  }, [state.error])
 
   const searchAutocomplete = (searchInput) => {
     return state.allPokemons.filter(pokemon => pokemon.name.toLowerCase().includes(searchInput.toLowerCase()));
@@ -46,6 +64,9 @@ export default function useApplicationData(props) {
     axios.get(GET_POKEMON_INFO + pokemon.name)
     .then(res => {
       setPokemon(res.data);
+    })
+    .catch(err => {
+      setState(prev => ({...prev, error: err.response.data}));
     });
   }
 
@@ -55,9 +76,10 @@ export default function useApplicationData(props) {
     .then(res => {
       setState(prev => ({...prev, selectedPokemon: res.data}))
     })
-    .catch();
+    .catch(err => {
+      setState(prev => ({...prev, error: err.response.data}));
+    });
   }
 
-
-  return { state, setPokemon, getSearchedPokemon, searchAutocomplete, setFromSearch };
+  return { state, setPokemon, getSearchedPokemon, searchAutocomplete, setFromSearch, setState };
 }

@@ -411,6 +411,14 @@
   animation-duration: 0.5s;
 }
 
+.error-true {
+  -webkit-animation-name: error-flash;
+  -webkit-animation-duration: 0.5s;
+
+  animation-name: error-flash;
+  animation-duration: 0.5s;
+}
+
 @-webkit-keyframes sensor-flash {  
   0% { background: rgba(64, 175, 255, 0.2); } 
   25% { background: rgba(64, 175, 255, 1 ); }
@@ -427,4 +435,22 @@
   75% { background: rgba(64, 175, 255, 1); }
   85% { background: rgba(64, 175, 255, 0.6); }
   100% { background: rgba(64, 175, 255, 1); }
+}
+
+@-webkit-keyframes error-flash {  
+  0% { background: rgba(255, 0, 0, 0.2); } 
+  25% { background: rgba(255, 0, 0, 1 ); }
+  50% { background: rgba(255, 0, 0, 0.2 ); }
+  75% { background: rgba(255, 0, 0, 1); }
+  85% { background: rgba(255, 0, 0, 0.6); }
+  100% { background: rgba(255, 0, 0, 1); }
+}
+
+@keyframes error-flash {  
+  0% { background: rgba(255, 0, 0, 0.2); } 
+  25% { background: rgba(255, 0, 0, 1 ); }
+  50% { background: rgba(255, 0, 0, 0.2 ); }
+  75% { background: rgba(255, 0, 0, 1); }
+  85% { background: rgba(255, 0, 0, 0.6); }
+  100% { background: rgba(255, 0, 0, 1); }
 }
