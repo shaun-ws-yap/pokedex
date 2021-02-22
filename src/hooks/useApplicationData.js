@@ -25,7 +25,6 @@ export default function useApplicationData(props) {
       axios.get(GET_MAX_POKEMON_INDEX)
       .then(res => {
         // Randomly generates 3 pokemon data
-        let randomPokemons = [];
         for (let i = 0; i < 3; i++) {
           const randomIndex = Math.round(Math.random() * Math.floor(res.data.count)) - 1;
           axios.get(GET_POKEMON_INFO + randomIndex)

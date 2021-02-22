@@ -14,7 +14,7 @@ export default function RandomPokemon(props) {
         key={pokemon.id}
         onClick={event => setPokemon(pokemon)}
       >
-        <img src={pokemon.sprites.front_default}></img>
+        <img src={pokemon.sprites.front_default} alt={`${pokemon.name} display image`}></img>
         <h3>{splitName[0]}</h3>
       </div>
     )

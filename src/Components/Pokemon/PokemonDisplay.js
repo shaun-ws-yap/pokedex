@@ -32,16 +32,16 @@ export default function PokemonDisplay(props) {
     <>
       { imageIndex === -1 && 
         usableSpritesArray.length > 0 && 
-          <img className="pokemon-display-image" src={selectedPokemon.sprites.front_default}></img> 
+          <img className="pokemon-display-image" src={selectedPokemon.sprites.front_default} alt={`${selectedPokemon.name} display image`}></img> 
       }
 
       { imageIndex !== - 1 && 
         usableSpritesArray.length > 0 && 
-          <img className="pokemon-display-image" src={usableSpritesArray[imageIndex]}></img> 
+          <img className="pokemon-display-image" src={usableSpritesArray[imageIndex]} alt={`${selectedPokemon.name} display image`}></img> 
       }
 
       { usableSpritesArray.length === 0 && 
-        <img className="pokemon-display-image" src="https://demofree.sirv.com/nope-not-here.jpg"></img>
+        <img className="pokemon-display-image" src="https://demofree.sirv.com/nope-not-here.jpg" alt="No display image available"></img>
       }
 
       <h4>ID: {selectedPokemon.id}</h4>
