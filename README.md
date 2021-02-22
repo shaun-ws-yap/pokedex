@@ -22,6 +22,7 @@ You will also see any lint errors in the console.
 * User should be able to cycle/scroll through the available pictures/sprites of that Pokemon.
 * User should see a list of randomly generated Pokemon upon load.
 * User should see an "auto-complete" search feature upon input.
+* User should be presented with an error if searched Pokemon does not exist.
 
 # Stack
 
