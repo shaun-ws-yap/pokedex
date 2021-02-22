@@ -15,12 +15,12 @@
 .pokedex-left {
   width: 50%;
   height: 100%;
-  background-color: rgba(255, 33, 33, 1);
+  background-color: rgba(255, 46, 46, 1);
 }
 
 .pokedex-right {
   width: 50%;
-  background-color: rgba(255, 33, 33, 1);
+  background-color: rgba(255, 46, 46, 1);
 }
 
 .pokedex-left-top {
@@ -455,7 +455,7 @@
   100% { background: rgba(255, 0, 0, 1); }
 }
 
-@media (max-width: 3440px) {
+@media (min-width: 3440px) {
   .pokedex {
     width: 65%;
   }
