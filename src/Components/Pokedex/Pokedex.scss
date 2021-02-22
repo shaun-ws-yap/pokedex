@@ -288,75 +288,124 @@
 }
 
 .normal {
-  background-color: rgba(210, 178, 146, 1);
+  background: linear-gradient(-45deg, #c99b6d, #d2b292, #b48555, #ebb783);
+  background-size: 400% 400%;
+  animation: gradient 5s ease infinite;
 }
 
 .fire {
-  background-color: rgba(255, 112, 36, 1);
+  background: linear-gradient(-45deg, #ff7024, #ff8f53, #c74a18, #b36236);
+  background-size: 400% 400%;
+  animation: gradient 5s ease infinite;
 }
 
 .water {
-  background-color: rgba(92, 231, 255, 1);
+  background: linear-gradient(-45deg, #36e1ff, #61e6fd, #26a8be, #62cfe2);
+  background-size: 400% 400%;
+  animation: gradient 5s ease infinite;
 }
 
 .grass {
-  background-color: rgba(135, 255, 163, 1);
+  background: linear-gradient(-45deg, #75f793, #87ffa3, #2da549, #5cfc81);
+  background-size: 400% 400%;
+  animation: gradient 5s ease infinite;
 }
 
 .electric {
-  background-color: rgba(230, 217, 44, 1);
+  background: linear-gradient(-45deg, #e6d92c, #e9ec3e, #9e951b, #ece252);
+  background-size: 400% 400%;
+  animation: gradient 5s ease infinite;
 }
 
 .ice {
-  background-color: rgba(194, 255, 250, 1);
+  background: linear-gradient(-45deg, #c2fffa, #6bc0b9, #40837d, #7df0e6);
+  background-size: 400% 400%;
+  animation: gradient 5s ease infinite;
 }
 
 .fighting {
-  background-color: rgb(255, 78, 78);
+  background: linear-gradient(-45deg, #bb5050, #be6161, #963a3a, #995252);
+  background-size: 400% 400%;
+  animation: gradient 5s ease infinite;
 }
 
 .ground {
-  background-color: rgba(171, 167, 128, 1);
+  background: linear-gradient(-45deg, #aba780, #aca566, #4b4830, #797660);
+  background-size: 400% 400%;
+  animation: gradient 5s ease infinite;
 }
 
 .flying {
-  background-color: rgba(214, 186, 230, 1);
+  background: linear-gradient(-45deg, #d6bae6, #b878dd, #553866, #b07acf);
+  background-size: 400% 400%;
+  animation: gradient 5s ease infinite;
 }
 
 .psychic {
-  background-color: rgb(250, 121, 235);
+  background: linear-gradient(-45deg, #994a90, #e483d8, #724f6e, #c07db8);
+  background-size: 400% 400%;
+  animation: gradient 5s ease infinite;
 }
 
 .bug {
-  background-color: rgba(122, 171, 103, 1);
+  background: linear-gradient(-45deg, #92c57d, #7da86a, #477036, #4d7e39);
+  background-size: 400% 400%;
+  animation: gradient 5s ease infinite;
 }
 
 .rock {
-  background-color: rgba(171, 118, 53, 1);
+  background: linear-gradient(-45deg, #8d6739, #977954, #644622, #583c18);
+  background-size: 400% 400%;
+  animation: gradient 5s ease infinite;
 }
 
 .ghost {
-  background-color: rgba(83, 65, 99, 1);
+  background: linear-gradient(-45deg, #534163, #34293d, #754c99, #372647);
+  background-size: 400% 400%;
+  animation: gradient 5s ease infinite;
 }
 
 .dark {
-  background-color: rgba(84, 60, 12, 1);
+  background-color: #543c0c;
+  background: linear-gradient(-45deg, #543c0c, #473d29, #837964, #382c14);
+  background-size: 400% 400%;
+  animation: gradient 5s ease infinite;
 }
 
 .dragon {
-  background-color: rgba(61, 26, 201, 1);
+  background: linear-gradient(-45deg, #3d1ac9, #2b2641, #5d518b, #100247);
+  background-size: 400% 400%;
+  animation: gradient 5s ease infinite;
 }
 
 .fairy {
-  background-color: rgba(227, 172, 200, 1);
+  background: linear-gradient(-45deg, #363636, #b43671, #a671c5, #d3a8c5);
+  background-size: 400% 400%;
+  animation: gradient 5s ease infinite;
 }
 
 .steel {
-  background-color: rgba(207, 207, 207, 1);
+  background: linear-gradient(-45deg, #ffbebe, #d7e8ff, #383838, #252e49);
+  background-size: 400% 400%;
+  animation: gradient 5s ease infinite;
 }
 
 .poison {
-  background-color: rgba(237, 77, 255, 1);
+  background: linear-gradient(-45deg, #844591, #cb92dd, #883ba0, #fca4ff);
+  background-size: 400% 400%;
+  animation: gradient 5s ease infinite;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
 
 .pokedex-search-input {
