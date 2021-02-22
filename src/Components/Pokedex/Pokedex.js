@@ -113,6 +113,7 @@ export default function Pokedex(props) {
                 className="pokedex-search-input"
               >
                 <input 
+                  data-testid="search"
                   autoFocus
                   className={`pokedex-searchbar predict-${searchInput && searchPredictionsList.length > 0 ? true : false}`}
                   autoComplete="off" 
