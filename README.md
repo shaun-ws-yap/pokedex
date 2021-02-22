@@ -1,5 +1,7 @@
 # Pokedex App
 
+[Live Link](https://gallant-jang-2f1b44.netlify.app/)
+
 A simple Pokedex search app using [PokeAPI](https://pokeapi.co/) that allows a user to search a Pokemon to view its stats and details. Also features an intelligent auto-complete search feature and a randomized list of 3 Pokemon upon load. 
 
 ## Available Scripts
