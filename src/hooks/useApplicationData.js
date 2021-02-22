@@ -34,7 +34,6 @@ export default function useApplicationData(props) {
             setState(prev => ({...prev, randomPokemonsList: [...prev.randomPokemonsList, res.data], selectedPokemon: res.data}));
           })
           .catch(err => {
-            console.log(err);
             setState(prev => ({...prev, error: err.response.data}));
           })
         }
