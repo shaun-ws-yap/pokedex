@@ -27,13 +27,14 @@ export default function useApplicationData(props) {
         // Randomly generates 3 pokemon data
         let randomPokemons = [];
         for (let i = 0; i < 3; i++) {
-          const randomIndex = Math.round(Math.random() * Math.floor(res.data.count));
+          const randomIndex = Math.round(Math.random() * Math.floor(res.data.count)) - 1;
           axios.get(GET_RANDOM_POKEMONS + randomIndex)
           .then(res => {
             // Sets 3 randomly generated pokemon to state
             setState(prev => ({...prev, randomPokemonsList: [...prev.randomPokemonsList, res.data]}));
           })
           .catch(err => {
+            console.log(err);
             setState(prev => ({...prev, error: err.response.data}));
           })
         }

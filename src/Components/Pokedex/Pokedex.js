@@ -17,6 +17,7 @@ export default function Pokedex(props) {
   const [ searchInput, setSearchInput ] = useState("");
   const [ searchPredictions, setSearchPredictions ] = useState({});
   const [ animate, setAnimate ] = useState(false);
+  const [ errorAnimate, setErrorAnimate ] = useState(false);
 
   // Dynamically change border of pokedex display based on selected pokemon type 
   const dynamicBorderByType = selectedPokemon.id ? selectedPokemon.types[0].type.name : '';
@@ -36,10 +37,17 @@ export default function Pokedex(props) {
 
   // Set sensor animation to true and reset to false after 0.5s
   useEffect(() => {
-    setAnimate(true);
-    setTimeout(() => {
-      setAnimate(false);
-    }, 500)
+    if (!error) {
+      setAnimate(true);
+      setTimeout(() => {
+        setAnimate(false);
+      }, 500)
+    } else {
+      setErrorAnimate(true);
+      setTimeout(() => {
+        setErrorAnimate(false);
+      }, 500)
+    }
   }, [selectedPokemon])
 
   // Auto fills predictions as user types
@@ -61,7 +69,7 @@ export default function Pokedex(props) {
         <div className="pokedex-left">
           <div className="pokedex-left-top">
             <div className="pokedex-sensor">
-              <div className={`pokedex-sensor-inner animate-${animate}`}>
+              <div className={`pokedex-sensor-inner animate-${animate} error-${errorAnimate}`}>
                 <div className="pokedex-sensor-bubble"></div>
               </div>
             </div>
