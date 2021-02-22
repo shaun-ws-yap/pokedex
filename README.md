@@ -16,8 +16,8 @@ You will also see any lint errors in the console.
 
 # User Stories
 
-* User should be abile to search for a Pokemon and have a "card" filled with info about that Pokemon.
-* User should recevie a card with at least the Pokemon name, height, weight, type(s), abilities, and base stats.
+* User should be able to search for a Pokemon and have a "card" filled with info about that Pokemon.
+* User should receive a card with at least the Pokemon name, height, weight, type(s), abilities, and base stats.
 * User should receive a card with at least one picture/ sprite of that Pokemon.
 * User should be able to cycle/scroll through the available pictures/sprites of that Pokemon.
 * User should see a list of randomly generated Pokemon upon load.
