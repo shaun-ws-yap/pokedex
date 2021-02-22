@@ -58,6 +58,7 @@ export default function useApplicationData(props) {
     return state.allPokemons.filter(pokemon => pokemon.name.toLowerCase().includes(searchInput.toLowerCase()));
   }
 
+  // Set selectedPokemon from search submit
   const setFromSearch = (pokemon) => {
     axios.get(GET_POKEMON_INFO + pokemon.name)
     .then(res => {

@@ -13,18 +13,21 @@ export default function PokemonInfo(props) {
     divRef.current.scrollTo(0, 0);
   }, [selectedPokemon]);
 
+  // Format Pokemon Type(s)
   const typeFormat = selectedPokemon.types.map((type, index) => {
     return (
       <li key={type.slot} className="type-item">{type.type.name}</li>
     )
   })
 
-  const abilityFormat = selectedPokemon.abilities.map(ability => {
+  // Format Pokemon Abilities
+  const abilitiesFormat = selectedPokemon.abilities.map(ability => {
     return (
       <li key={ability.slot} className="ability-item">{ability.ability.name}</li>
     )
   })
 
+  // Format Pokemon Stats
   const statsFormat = selectedPokemon.stats.map(stat => {
     return (
       <div key={stat.stat.name} className="stats-item">
@@ -37,13 +40,14 @@ export default function PokemonInfo(props) {
   return (
     <div className="selected-pokemon-info" ref={divRef}>
       <div className="selected-pokemon-type">
-        {/* Plurality type check */}
+        {/* Plurality check for Pokemon type(s) */}
         { selectedPokemon.types.length === 1 && (
           <div className="pokemon-info-height-weight-type">
             <label>Type: </label>
             <p>{selectedPokemon.types[0].type.name}</p>
           </div>
         )} 
+        {/* If Pokemon has more than 1 type */}
         { selectedPokemon.types.length > 1 && (
           <div className="pokemon-info-types">
             <label>Types: </label>
@@ -54,7 +58,7 @@ export default function PokemonInfo(props) {
       <div className="selected-pokemon-ability">
         <p>Abilities:</p>
         <ul className="pokemon-info abilities-list">
-          {abilityFormat}
+          {abilitiesFormat}
         </ul>
       </div>
       <div className="pokemon-info-height-weight-type">

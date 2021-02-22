@@ -30,28 +30,33 @@ export default function PokemonDisplay(props) {
 
   return (
     <>
+      {/* Load front image as default */}
       { imageIndex === -1 && 
         usableSpritesArray.length > 0 && 
           <img className="pokemon-display-image" src={selectedPokemon.sprites.front_default} alt={`${selectedPokemon.name} display image`}></img> 
       }
 
+      {/* Cycle image */}
       { imageIndex !== - 1 && 
         usableSpritesArray.length > 0 && 
           <img className="pokemon-display-image" src={usableSpritesArray[imageIndex]} alt={`${selectedPokemon.name} display image`}></img> 
       }
 
+      {/* Load error image if Pokemon has no sprites */}
       { usableSpritesArray.length === 0 && 
         <img className="pokemon-display-image" src="https://demofree.sirv.com/nope-not-here.jpg" alt="No display image available"></img>
       }
 
       <h4>ID: {selectedPokemon.id}</h4>
 
+      {/* Cycle next image */}
       { imageIndex > -1 && 
         <button className="image-button previous" onClick={event => handlePrev()}>
           <i className="fas fa-caret-left fa-2x"></i>
         </button> 
       }
       
+      {/* Cycle previous image */}
       { imageIndex < usableSpritesArray.length - 1 && 
         <button className="image-button next" onClick={event => handleNext()}>
           <i className="fas fa-caret-right fa-2x"></i>
