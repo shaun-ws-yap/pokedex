@@ -2,10 +2,10 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 
 export default function useApplicationData(props) {
-  const GET_MAX_POKEMON_INDEX = `https://pokeapi.co/api/v2/pokemon-species/?limit=0`;
-  const GET_RANDOM_POKEMONS = `https://pokeapi.co/api/v2/pokemon/`;
-  const GET_POKEMON_INFO = `https://pokeapi.co/api/v2/pokemon/`;
-  const GET_ALL_POKEMON = `https://pokeapi.co/api/v2/pokemon-species/?limit=-1`;
+  const BASE_URL = 'https://pokeapi.co/api/v2/';
+  const GET_MAX_POKEMON_INDEX = BASE_URL + "pokemon-species/?limit=0";
+  const GET_POKEMON_INFO = BASE_URL + "pokemon/";
+  const GET_ALL_POKEMON = BASE_URL + "pokemon-species/?limit=-1";
 
   const [state, setState] = useState({
     randomPokemonsList: [],
@@ -28,7 +28,7 @@ export default function useApplicationData(props) {
         let randomPokemons = [];
         for (let i = 0; i < 3; i++) {
           const randomIndex = Math.round(Math.random() * Math.floor(res.data.count)) - 1;
-          axios.get(GET_RANDOM_POKEMONS + randomIndex)
+          axios.get(GET_POKEMON_INFO + randomIndex)
           .then(res => {
             // Sets 3 randomly generated pokemon to state
             setState(prev => ({...prev, randomPokemonsList: [...prev.randomPokemonsList, res.data]}));
