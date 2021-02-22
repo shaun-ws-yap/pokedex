@@ -4,3 +4,90 @@
   margin: auto;
   text-align: center;
 }
+
+@media (max-width: 3300px) {
+  .main-container {
+    width: 55vw;
+  }
+}
+
+@media (max-width: 2900px) {
+  .main-container {
+    width: 60vw;
+  }
+}
+
+@media (max-width: 2500px) {
+  .main-container {
+    width: 65vw;
+  }
+}
+
+
+@media (max-width: 2300px) {
+  .main-container {
+    width: 70vw;
+  }
+}
+
+@media (max-width: 2000px) {
+  .main-container {
+    width: 75vw;
+  }
+}
+
+@media (max-width: 1800px) {
+  .main-container {
+    width: 80vw;
+  }
+}
+
+@media (max-width: 1650px) {
+  .main-container {
+    width: 85vw;
+  }
+}
+
+@media (max-width: 1550px) {
+  .main-container {
+    width: 90vw;
+  }
+}
+
+
+@media (max-width: 1450px) {
+  .main-container {
+    width: 95vw;
+  }
+}
+
+@media (max-width: 1375px) {
+  .main-container {
+    width: 100vw;
+  }
+}
+
+@media (max-height: 1050px) {
+  .main-container {
+    height: 60vh;
+  }
+}
+
+@media (max-height: 940px) {
+  .main-container {
+    height: 65vh;
+  }
+}
+
+@media (max-height: 850px) {
+  .main-container {
+    height: 75vh;
+  }
+}
+
+
+@media (max-height: 750px) {
+  .main-container {
+    height: 80vh;
+  }
+}

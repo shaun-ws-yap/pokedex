@@ -454,3 +454,62 @@
   85% { background: rgba(255, 0, 0, 0.6); }
   100% { background: rgba(255, 0, 0, 1); }
 }
+
+@media (max-width: 3440px) {
+  .pokedex {
+    width: 65%;
+  }
+}
+
+@media (max-width: 2900px) {
+  .pokedex {
+    width: 80%;
+  }
+}
+
+@media (max-width: 2000px) {
+  .pokedex {
+    width: 85%;
+  }
+}
+
+@media (max-width: 1800px) {
+  .pokedex {
+    width: 90%;
+  }
+}
+
+@media (max-width: 1650px) {
+  .main-container {
+    width: 85vw;
+  }
+}
+
+@media (max-width: 1550px) {
+  .main-container {
+    width: 90vw;
+  }
+}
+
+
+@media (max-width: 1450px) {
+  .main-container {
+    width: 95vw;
+  }
+}
+
+@media (max-width: 1375px) {
+  .main-container {
+    width: 100vw;
+  }
+}
+
+@media (max-width: 1050px) {
+  .search-container {
+    width: 100%;
+  }
+
+  .pokedex-searchbar {
+    width: 100%;
+  }
+}

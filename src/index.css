@@ -3,10 +3,17 @@ body {
   margin-top: 15vh;
   font-family: 'Press Start 2P', cursive;
   background-image: url('./docs/background.png');
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   background-size: cover;
 }
 
 code {
   font-family: 'Press Start 2P', cursive;
+}
+
+
+@media (max-height: 940px) {
+  body {
+    margin-top: 10vh;
+  }
 }
