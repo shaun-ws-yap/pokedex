@@ -127,8 +127,6 @@ export default function Pokedex(props) {
                 </div>
               )}
               </form>
-             
-      
             </div>
           </div>
           <div className="pokedex-right-bottom">

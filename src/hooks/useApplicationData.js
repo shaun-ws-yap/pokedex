@@ -31,7 +31,7 @@ export default function useApplicationData(props) {
           axios.get(GET_POKEMON_INFO + randomIndex)
           .then(res => {
             // Sets 3 randomly generated pokemon to state
-            setState(prev => ({...prev, randomPokemonsList: [...prev.randomPokemonsList, res.data]}));
+            setState(prev => ({...prev, randomPokemonsList: [...prev.randomPokemonsList, res.data], selectedPokemon: res.data}));
           })
           .catch(err => {
             console.log(err);
